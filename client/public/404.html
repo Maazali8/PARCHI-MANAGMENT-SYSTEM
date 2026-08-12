@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Parchi Management System</title>
+    <script>
+      // Single Page App redirect trick for GitHub Pages.
+      // When GitHub Pages gets a 404 (direct URL or refresh), it serves this
+      // file. We redirect back to index.html with the path encoded as a query
+      // param, then index.html's script decodes it back.
+      var segmentCount = 1; // number of path segments in the base URL (repo name)
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

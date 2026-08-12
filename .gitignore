@@ -3,3 +3,9 @@ dist
 .env
 .env.local
 *.log
+
+# Backend lives in its own repo
+server/
+package.json
+package-lock.json
+design.md
