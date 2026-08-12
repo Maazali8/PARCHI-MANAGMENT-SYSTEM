@@ -1,0 +1,16 @@
+{
+  "name": "parchi-management-system",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build && cd ../server && npm run build",
+    "seed": "cd server && npm run seed",
+    "prisma:generate": "cd server && npx prisma generate",
+    "prisma:push": "cd server && npx prisma db push"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
